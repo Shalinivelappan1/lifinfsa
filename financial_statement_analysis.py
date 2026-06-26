@@ -1741,8 +1741,8 @@ We analyse FY2024 (approximate) data from an equity analyst's perspective.
     st.subheader("Simplified P&L (FY2024 Approximate, ₹ Crore)")
     infy_is = pd.DataFrame({
         "Item":["Revenue","COGS","Gross Profit","OPEX","EBITDA","D&A","EBIT","Interest","EBT","Tax","PAT"],
-        "FY2024":["₹1,53,670Cr","₹92,202Cr","₹61,468Cr","₹18,440Cr","₹43,028Cr","₹5,380Cr","₹37,648Cr","₹424Cr","₹37,224Cr","₹9,306Cr","₹26,248Cr"],
-        "FY2023":["₹1,46,767Cr","₹88,059Cr","₹58,708Cr","₹17,612Cr","₹41,096Cr","₹4,690Cr","₹36,406Cr","₹350Cr","₹36,056Cr","₹9,014Cr","₹25,248Cr"],
+        "FY2024":["₹1,53,670Cr","₹92,202Cr","₹61,468Cr","₹18,440Cr","₹43,028Cr","₹5,380Cr","₹37,648Cr","₹424Cr","₹37,224Cr","₹9,306Cr","₹27,918Cr"],
+        "FY2023":["₹1,46,767Cr","₹88,059Cr","₹58,708Cr","₹17,612Cr","₹41,096Cr","₹4,690Cr","₹36,406Cr","₹350Cr","₹36,056Cr","₹9,014Cr","₹27,042Cr"],
         "% Rev FY24":["100%","60%","40%","12%","28%","3.5%","24.5%","0.3%","24.2%","6.1%","17.1%"]
     })
     st.dataframe(infy_is, use_container_width=True)
