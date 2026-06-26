@@ -1837,7 +1837,35 @@ Instead, investors analysed:
         ]
     })
 
-    st.dataframe(zomato_data, use_container_width=True)
+    
+    zomato_data = pd.DataFrame({
+    "Metric": [
+        "Revenue",
+        "Gross Order Value (Food Delivery)",
+        "Adjusted EBITDA",
+        "Profit After Tax",
+        "Free Cash Flow",
+        "Cash & Investments"
+    ],
+    "FY2022": [
+        "₹4,192 Cr",
+        "~₹20,000 Cr",
+        "Negative",
+        "₹(-1,222) Cr",
+        "Negative",
+        "~₹11,000 Cr"
+    ],
+    "FY2025": [
+        "₹20,243 Cr",
+        "~₹38,000+ Cr",
+        "Positive",
+        "₹527 Cr",
+        "Positive",
+        "~₹19,000+ Cr"
+    ]
+})
+
+st.dataframe(zomato_data, hide_index=True, use_container_width=True)
 
     # ---------------------------------------------------
     # Why Traditional FSA Doesn't Work
