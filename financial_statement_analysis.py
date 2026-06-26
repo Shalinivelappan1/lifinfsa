@@ -1789,103 +1789,80 @@ elif menu == "Case-Based Learning — Zomato":
     st.header("📚 Case Study: Zomato (Eternal Ltd.) — Financial Statement Analysis for a Growth Investor")
 
     st.markdown("""
-## Why is Zomato a Challenging FSA Case?
+## Zomato — Analysing a High-Growth Technology Company
 
-Unlike mature companies, Zomato spent several years prioritising **growth over profitability**.
-Traditional valuation metrics such as **P/E, ROE and Dividend Yield** were not useful during its high-growth phase.
+Unlike traditional companies, Zomato spent several years prioritising **growth over profitability**.
+Therefore, analysts evaluate the company differently from mature firms.
 
-Instead, investors analysed:
-- Revenue growth
+Instead of focusing only on P/E or ROE, investors analyse:
+
+- Revenue Growth
 - Gross Order Value (GOV)
-- Customer growth
-- Unit economics
-- EBITDA trajectory
-- Cash generation
-- Path to profitability
+- Customer Growth
+- Unit Economics
+- EBITDA Trend
+- Free Cash Flow
+- Path to Sustainable Profitability
 """)
 
     # ---------------------------------------------------
     # Financial Summary
     # ---------------------------------------------------
 
-    st.subheader("Simplified Financial Summary (₹ Crore)")
+    st.subheader("Financial Journey (₹ Crore)")
 
     zomato_data = pd.DataFrame({
         "Metric":[
             "Revenue",
-            "Gross Order Value (Food Delivery)",
+            "PAT",
             "Adjusted EBITDA",
-            "Profit After Tax",
-            "Free Cash Flow",
-            "Cash & Investments"
+            "Free Cash Flow"
         ],
         "FY2022":[
             "₹4,192 Cr",
-            "~₹20,000 Cr",
-            "Negative",
             "₹(-1,222) Cr",
             "Negative",
-            "~₹11,000 Cr"
+            "Negative"
+        ],
+        "FY2023":[
+            "₹7,079 Cr",
+            "₹(-971) Cr",
+            "Improving",
+            "Negative"
+        ],
+        "FY2024":[
+            "₹12,114 Cr",
+            "₹351 Cr",
+            "Positive",
+            "Turning Positive"
         ],
         "FY2025":[
             "₹20,243 Cr",
-            "~₹38,000+ Cr",
-            "Positive",
             "₹527 Cr",
             "Positive",
-            "~₹19,000+ Cr"
+            "Positive"
         ]
     })
 
-    
-    zomato_data = pd.DataFrame({
-    "Metric": [
-        "Revenue",
-        "Gross Order Value (Food Delivery)",
-        "Adjusted EBITDA",
-        "Profit After Tax",
-        "Free Cash Flow",
-        "Cash & Investments"
-    ],
-    "FY2022": [
-        "₹4,192 Cr",
-        "~₹20,000 Cr",
-        "Negative",
-        "₹(-1,222) Cr",
-        "Negative",
-        "~₹11,000 Cr"
-    ],
-    "FY2025": [
-        "₹20,243 Cr",
-        "~₹38,000+ Cr",
-        "Positive",
-        "₹527 Cr",
-        "Positive",
-        "~₹19,000+ Cr"
-    ]
-})
-
-st.dataframe(zomato_data, hide_index=True, use_container_width=True)
+    st.table(zomato_data)
 
     # ---------------------------------------------------
     # Why Traditional FSA Doesn't Work
     # ---------------------------------------------------
 
-    st.subheader("Why Traditional FSA is Different for Zomato")
+    st.subheader("Why Traditional Financial Statement Analysis Doesn't Work")
 
     st.warning("""
 Traditional Financial Statement Analysis has limitations for high-growth technology companies.
 
-**Traditional metrics**
-
 ❌ P/E Ratio
-- Meaningless when earnings are negative.
+• Not meaningful when earnings are negative.
 
 ❌ ROE / ROA
-- Distorted because companies raise large amounts of equity.
+• Distorted because startups raise significant equity capital.
 
 ❌ Debt Ratios
-- Zomato is largely debt-free and maintains significant cash reserves.
+• Zomato is largely debt-free and maintains a strong cash position.
 
 Instead, analysts focus on:
 
@@ -1901,7 +1878,7 @@ Instead, analysts focus on:
 
 ✅ Contribution Margin
 
-✅ EBITDA Improvement
+✅ EBITDA Trend
 
 ✅ Free Cash Flow
 
@@ -1912,7 +1889,7 @@ Instead, analysts focus on:
     # KPI Dashboard
     # ---------------------------------------------------
 
-    st.subheader("Key Non-Financial Metrics")
+    st.subheader("Key Operating Metrics")
 
     kpi_data = pd.DataFrame({
         "KPI":[
@@ -1933,11 +1910,11 @@ Instead, analysts focus on:
         ],
         "FY2025":[
             "~22 Million+",
-            "₹450–500",
-            "~22–24%",
+            "₹470",
+            "~23%",
             "~₹38,000+ Cr",
-            "~58–60%",
-            "~5–6%"
+            "~60%",
+            "~6%"
         ],
         "Trend":[
             "📈",
@@ -1950,7 +1927,6 @@ Instead, analysts focus on:
     })
 
     st.table(kpi_data)
-
     # ---------------------------------------------------
     # Analyst Recommendation
     # ---------------------------------------------------
@@ -1958,11 +1934,11 @@ Instead, analysts focus on:
     st.subheader("🎯 Analyst Decision")
 
     zomato_decision = st.radio(
-        "What is your investment recommendation?",
+        "Based on the information above, what is your investment recommendation?",
         [
             "BUY — Strong growth with improving profitability",
             "HOLD — Wait for sustained profitability",
-            "SELL — Valuation already discounts optimistic growth",
+            "SELL — Valuation already reflects optimistic growth",
             "AVOID — Business model remains too risky"
         ]
     )
@@ -1970,25 +1946,27 @@ Instead, analysts focus on:
     if zomato_decision == "BUY — Strong growth with improving profitability":
 
         st.success("""
-### Why BUY?
+### ✅ Why BUY?
 
-✅ Revenue has grown nearly five-fold in three years.
+**Investment Thesis**
 
-✅ Food delivery business is consistently profitable.
+• Revenue has grown nearly five-fold in three years.
 
-✅ Blinkit has become another major growth engine.
+• Food delivery business has become consistently profitable.
 
-✅ Strong network effects and market leadership.
+• Blinkit is emerging as another high-growth engine.
 
-✅ Improving operating leverage.
+• Strong network effects and market leadership.
 
-✅ Healthy cash position with minimal debt.
+• Improving operating leverage.
 
-Preferred valuation methods:
+• Healthy balance sheet with substantial cash reserves.
 
-• EV/Sales
+**Preferred valuation methods**
 
-• EV/GOV
+• EV / Sales
+
+• EV / GOV
 
 • Discounted Cash Flow (DCF)
 
@@ -1998,9 +1976,11 @@ Preferred valuation methods:
     elif zomato_decision == "HOLD — Wait for sustained profitability":
 
         st.info("""
+### HOLD
+
 A balanced investment approach.
 
-Watch for:
+Investors may wait for:
 
 • Consistent PAT growth
 
@@ -2008,35 +1988,39 @@ Watch for:
 
 • Margin expansion
 
-• Strong free cash flow
+• Positive Free Cash Flow
 
-• Competitive intensity
+• Stable competitive intensity
 """)
 
-    elif zomato_decision == "SELL — Valuation already discounts optimistic growth":
+    elif zomato_decision == "SELL — Valuation already reflects optimistic growth":
 
         st.warning("""
+### SELL
+
 This is a reasonable concern.
 
-Traditional valuation metrics like P/E appear expensive.
+Traditional valuation ratios such as P/E appear expensive.
 
-However, growth companies are commonly valued using:
+However, technology companies are generally valued using:
 
-• EV/Sales
+• EV / Sales
 
-• EV/GOV
+• EV / GOV
 
-• Long-term EBITDA
+• Future EBITDA
 
-• Future Free Cash Flow
+• Long-term Free Cash Flow
 """)
 
     else:
 
         st.error("""
-A conservative view.
+### AVOID
 
-Risks include:
+A conservative perspective.
+
+Potential risks include:
 
 • Intense competition
 
@@ -2044,19 +2028,19 @@ Risks include:
 
 • Regulatory changes
 
-• Execution risks in quick commerce
+• Execution risk in quick commerce
 
-Despite these risks, operating performance has improved substantially over recent years.
+However, the company has demonstrated substantial improvement in unit economics and profitability.
 """)
 
     # ---------------------------------------------------
-    # Interactive Classroom Question
+    # Interactive Quiz
     # ---------------------------------------------------
 
     st.subheader("🧠 Classroom Quiz")
 
     quiz = st.radio(
-        "Which metric is MOST useful when analysing a high-growth company like Zomato?",
+        "Which metric is MOST useful for analysing a high-growth company like Zomato?",
         [
             "P/E Ratio",
             "ROE",
@@ -2067,55 +2051,109 @@ Despite these risks, operating performance has improved substantially over recen
 
     if quiz == "Revenue Growth & Unit Economics":
         st.success(
-            "🎉 Correct! High-growth companies should primarily be analysed using growth metrics, unit economics, and the path to profitability."
+            "🎉 Correct! High-growth companies should primarily be analysed using revenue growth, customer metrics, unit economics and the path to profitability."
         )
     else:
         st.warning(
-            "Not quite. Traditional ratios become meaningful only after the company reaches a mature stage."
+            "❌ Traditional ratios become meaningful only after the company reaches a mature stage."
         )
 
     # ---------------------------------------------------
-    # Final Lesson
+    # Classroom Discussion
     # ---------------------------------------------------
 
-    st.subheader("📖 Key Takeaway")
+    st.subheader("💬 Discussion Questions")
+
+    st.info("""
+1️⃣ Why is P/E ratio not useful for early-stage technology companies?
+
+2️⃣ Why do investors track Gross Order Value (GOV) instead of only Revenue?
+
+3️⃣ How does Blinkit strengthen Zomato's long-term growth story?
+
+4️⃣ Which valuation metric would you choose?
+• EV/Sales
+• EV/GOV
+• DCF
+• P/E
+
+Why?
+""")
+
+    # ---------------------------------------------------
+    # Key Lesson
+    # ---------------------------------------------------
+
+    st.subheader("📚 Key Takeaway")
 
     st.success("""
-### Financial Statement Analysis Must Match the Business Model
+### Financial Statement Analysis Depends on the Business Model
 
-🏭 Mature Manufacturing Firms
+🏭 Mature Manufacturing Companies
+
 • ROE
+
 • ROCE
+
 • EPS
+
 • P/E
+
 • Dividend Yield
 
-🚀 High-Growth Technology Firms
+━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 High-Growth Technology Companies
+
 • Revenue Growth
-• Monthly Transacting Customers
-• GOV
+
+• Monthly Customers
+
+• Gross Order Value (GOV)
+
 • Unit Economics
+
 • Contribution Margin
+
 • EBITDA
+
 • Free Cash Flow
 
+━━━━━━━━━━━━━━━━━━━━━━
+
 🏦 Banks & NBFCs
+
 • NIM
+
 • GNPA
+
 • NNPA
+
 • Capital Adequacy Ratio
 
+━━━━━━━━━━━━━━━━━━━━━━
+
 🏘️ Real Estate
+
 • NAV
+
 • Collections
+
 • Launch Pipeline
 
+━━━━━━━━━━━━━━━━━━━━━━
+
 🛒 FMCG
+
 • Volume Growth
+
 • Gross Margin
+
 • Distribution Reach
 
-🎯 One framework does not fit every company.
+━━━━━━━━━━━━━━━━━━━━━━
 
-The best analysts adapt Financial Statement Analysis to the firm's industry, strategy, and stage of growth.
+🎯 **One financial analysis framework does NOT fit every company.**
+
+Always analyse a business in the context of its industry, competitive position and stage of growth.
 """)
